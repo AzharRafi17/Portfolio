@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { JetBrains_Mono } from "next/font/google"; 
+
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains", 
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Azhar | Full-Stack Developer",
@@ -13,11 +21,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
+   <html
       lang="en"
-      className="h-full scroll-smooth antialiased"
+      className={`h-full scroll-smooth antialiased ${jetBrainsMono.variable}`}
     >
-      <body className="min-h-full bg-[#050505] text-zinc-100">{children}</body>
+      <body className="min-h-full bg-[#050505] text-zinc-100 font-sans">
+        {children}
+      </body>
     </html>
   );
 }

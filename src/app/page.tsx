@@ -1,9 +1,8 @@
 "use client";
 
-import { type FormEvent, useEffect, useRef, useState } from "react";
+import { type FormEvent, useEffect, useState } from "react";
 import {
   motion,
-  useInView,
   useMotionValue,
   useScroll,
   useSpring,
@@ -26,67 +25,99 @@ import {
   Server,
   Sparkles,
   X,
+  Layout,
+  Terminal,
+  Globe,
+  Layers,
+  Rocket,
+  Phone,
 } from "lucide-react";
 
 const techStack = [
   { name: "Next.js", detail: "App Router, RSC", icon: Blocks, accent: "cyan" },
   { name: "Django", detail: "APIs, admin systems", icon: Server, accent: "emerald" },
-  { name: "Tailwind", detail: "Design systems", icon: Sparkles, accent: "sky" },
+  { name: "React", detail: "Component architecture", icon: Layout, accent: "blue" },
+  { name: "Payload", detail: "Headless CMS, Node.js", icon: Terminal, accent: "white" },
+  { name: "WordPress", detail: "CMS customization", icon: Globe, accent: "sky" },
   { name: "PostgreSQL", detail: "Relational data", icon: Database, accent: "amber" },
-  { name: "AI Apps", detail: "LLM workflows", icon: Bot, accent: "rose" },
+  { name: "Tailwind", detail: "Design systems", icon: Sparkles, accent: "sky" },
   { name: "TypeScript", detail: "Typed interfaces", icon: Code2, accent: "violet" },
+  { name: "Vue.js", detail: "Composition API, SPAs", icon: Layers, accent: "green" },
 ];
 
 const projects = [
   {
     title: "Vertec",
     description:
-      "A refined full-stack platform built around fast workflows, clean dashboards, and reliable backend operations.",
-    tech: ["Next.js", "Django", "PostgreSQL", "Tailwind"],
-    source: "https://github.com/",
+      "A professional Django CMS-based platform focused on streamlined workflows and complex backend architecture, featuring self-referencing model logic.",
+    tech: ["Django", "Python", "CMS", "PostgreSQL"],
+    source: "https://www.vertec.com/",
   },
   {
-    title: "AI Apps Lab",
+    title: "Kendris Website",
     description:
-      "A suite of intelligent product experiments focused on useful automation, conversational UX, and lean interfaces.",
-    tech: ["React", "AI SDK", "TypeScript", "APIs"],
-    source: "https://github.com/",
+      "A modern corporate web presence developed using Payload CMS for flexible content management and high-performance delivery.",
+    tech: ["Payload CMS", "TypeScript", "Node.js"],
+    source: "https://www.kendris.com/en/",
   },
   {
-    title: "Portfolio System",
+    title: "Vibe Logs",
     description:
-      "A personal brand surface with motion, responsive composition, glass panels, and a cinematic dark-mode foundation.",
-    tech: ["Next.js", "Framer Motion", "Lucide", "Tailwind"],
-    source: "https://github.com/",
+      "A daily affirmation and mood-tracking application built to monitor mental well-being with a seamless user experience.",
+    tech: ["Next.js", "Supabase", "Tailwind CSS"],
   },
+  {
+    title: "Menulance",
+    description:
+      "A translation-focused platform where I contributed to frontend development, ensuring a responsive and intuitive interface.",
+    tech: ["Vue.js", "JavaScript", "Frontend"],
+    source: "https://menulance.com/",
+  },
+  {
+    title: "Point of Sale (POS) System",
+    description:
+      "A functional retail management system designed to handle inventory, sales tracking, and transaction processing efficiently.",
+    tech: ["Database Management"],
+  },
+  {
+    title: "WordPress Development",
+    description:
+      "Customization and deployment of various web solutions using WordPress for rapid delivery and client-ready management.",
+    tech: ["WordPress", "PHP", "Web Design"],
+  }
 ];
 
 const timeline = [
   {
-    title: "Full-Stack Developer",
+    title: "Full Stack Developer",
     period: "Present",
-    body: "Building production-grade web apps with modern frontend architecture, API design, and database-backed products.",
+    body: "Building production-grade apps with Django and Next.js. Currently focusing on bridging traditional web architectures with AI capabilities.",
     icon: BriefcaseBusiness,
   },
   {
-    title: "AI Product Builder",
-    period: "Recent Work",
-    body: "Designing practical AI interfaces that turn model capability into focused, usable workflows.",
-    icon: Bot,
+    title: "AI & LLM Integration",
+    period: "Focus Area",
+    body: "Actively mastering AI SDKs and prompt engineering. Implementing intelligent features like context-aware chatbots and automated workflows into web platforms.",
+    icon: Sparkles, 
   },
   {
-    title: "Computer Science Foundation",
+    title: "Project Delivery",
+    period: "Recent Work",
+    body: "Proven track record with Payload CMS, Vue.js, and POS systems. Transitioning from standard CRUD apps to AI-augmented user experiences.",
+    icon: Rocket,
+  },
+  {
+    title: "Engineering & Logic",
     period: "Education",
-    body: "Grounded in software engineering fundamentals, data modeling, web systems, and problem solving.",
+    body: "Finalizing CS fundamentals with a strong interest in how SME management can be optimized through AI-driven automation.",
     icon: GraduationCap,
   },
 ];
 
 const socials = [
-  { label: "GitHub", href: "https://github.com/", icon: Code2 },
-  { label: "LinkedIn", href: "https://linkedin.com/", icon: BriefcaseBusiness },
-  { label: "Email", href: "mailto:azhar@example.com", icon: Mail },
-];
+  { label: "GitHub", href: "https://github.com/AzharRafi17", icon: Code2 },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/muhammad-azhar-a1a313283/", icon: BriefcaseBusiness },
+  { label: "03321622486", icon: Phone },];
 
 type ChatMessage = {
   role: "assistant" | "user";
@@ -258,7 +289,7 @@ function Header() {
         ))}
       </nav>
       <a
-        href="mailto:azhar@example.com"
+        href="mailto:muhammadazharali17@gmail.com"
         className="inline-flex h-10 items-center gap-2 bg-cyan-300 px-4 text-sm font-semibold text-black shadow-[0_0_32px_rgba(103,232,249,0.25)] transition hover:bg-cyan-200"
       >
         <Mail size={16} />
@@ -304,7 +335,7 @@ function Hero() {
           Azhar builds sleek digital systems for the next interface era.
         </RevealText>
         <p className="mt-7 max-w-2xl text-base leading-8 text-zinc-400 sm:text-lg">
-          Full-stack developer crafting fast, intelligent, and visually precise
+          Full stack developer crafting fast, intelligent, and visually precise
           products with Next.js, Django, Tailwind, PostgreSQL, and AI workflows.
         </p>
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -319,7 +350,7 @@ function Hero() {
             />
           </a>
           <a
-            href="https://github.com/"
+            href="https://github.com/AzharRafi17"
             target="_blank"
             rel="noreferrer"
             className="inline-flex h-12 items-center justify-center gap-2 border border-white/12 bg-white/[0.035] px-5 font-semibold text-zinc-100 backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/[0.07]"
@@ -466,7 +497,7 @@ function Projects() {
               {project.tech.map((tech) => (
                 <span
                   key={tech}
-                  className="border border-white/10 bg-white/[0.04] px-3 py-1.5 font-mono text-[11px] uppercase text-zinc-300"
+                  className="border border-white/10 bg-white/[0.04] px-3 py-1.5 font-jetbrains text-[11px] uppercase text-zinc-300"
                 >
                   {tech}
                 </span>
@@ -544,8 +575,6 @@ function Contact() {
               <a
                 key={social.label}
                 href={social.href}
-                target={social.href.startsWith("mailto:") ? undefined : "_blank"}
-                rel={social.href.startsWith("mailto:") ? undefined : "noreferrer"}
                 className="inline-flex h-11 items-center gap-2 border border-white/10 bg-white/[0.04] px-4 text-sm font-semibold text-zinc-200 transition hover:-translate-y-0.5 hover:border-red-200/40 hover:text-red-100"
               >
                 <Icon size={17} />
@@ -762,7 +791,7 @@ function KineticRibbon({ reverse = false }: { reverse?: boolean }) {
           reverse ? "marquee-reverse" : ""
         }`}
       >
-        <span>Design meets logic · Motion meets clarity · Code meets atmosphere ·</span>
+        <span>Building with Intelligence · Designing with Intent · Coding for the Future ·</span>
         <span>Design meets logic · Motion meets clarity · Code meets atmosphere ·</span>
       </div>
     </div>
