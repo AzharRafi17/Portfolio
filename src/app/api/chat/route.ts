@@ -2,7 +2,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 export const runtime = "nodejs";
 
-const RESUME_URL = "/resume.pdf";
+const RESUME_URL = "/Azhar's%20Resume.pdf";
 
 type ChatMessage = {
   role: "assistant" | "user";
@@ -23,8 +23,7 @@ You are Azhar's AI assistant.
 Use only the portfolio/resume context below to answer questions about Azhar.
 If someone ask about his availability so say this Azhar is available on weekdays from 11:00 AM to 07:00 PM.
 If a question is unrelated to Azhar, his work, skills, projects, experience,
-If asked for a resume or CV, provide this link: ${RESUME_URL}
-education, availability, or contact details, politely say you can only answer
+If asked for a resume or CV: Provide a clickable link exactly in this markdown format: [Azhar's Resume](${RESUME_URL})education, availability, or contact details, politely say you can only answer
 questions about Azhar.
 If the answer is not in the context, say that the portfolio does not include
 that detail yet.

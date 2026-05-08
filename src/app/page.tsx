@@ -677,8 +677,25 @@ function FloatingChatbot() {
                   : "border-white/10 bg-white/[0.045] text-zinc-300"
               }`}
             >
-              {message.content}
-            </div>
+              {message.role === "assistant" && message.content.includes("[Azhar's Resume]") ? (
+                <div className="flex flex-col gap-3">
+                  <span className="text-zinc-300">
+                    Yes, you can view Azhar's resume. Click the link below:
+                  </span>
+                  <a
+                    href="/Azhar's%20Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 w-fit border border-red-400/40 bg-red-400/10 px-3 py-1.5 text-xs font-bold text-red-100 transition hover:bg-red-400 hover:text-black"
+                  >
+                    <BriefcaseBusiness size={14} />
+                    AZHAR'S RESUME 
+                  </a>
+                </div>
+              ) : (
+                message.content
+            )} 
+          </div>
           ))}
           {loading ? (
             <div className="flex items-center gap-2 text-sm text-zinc-500">
