@@ -1,42 +1,31 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "Harmond";
-  src: url("/fonts/harmond/Harmond-ExtraBoldExpanded.otf") format("opentype");
-  font-display: swap;
-  font-style: normal;
-  font-weight: 800;
-}
-
-@font-face {
-  font-family: "Ranade";
-  src: url("/fonts/ranade/Ranade-Variable.woff2") format("woff2-variations"),
-    url("/fonts/ranade/Ranade-Variable.woff2") format("woff2");
-  font-display: swap;
-  font-style: normal;
-  font-weight: 100 700;
-}
-
 :root {
   --background: #050505;
   --foreground: #f4f4f5;
   --accent: #b91729;
   --accent-soft: #f87171;
-  --font-display: "Harmond", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Ranade", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-code: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-body);
-  --font-mono: var(--font-display);
+  --font-display: var(--font-heading);
+  --font-mono: var(--font-code);
+  --font-jetbrains: var(--font-code);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  letter-spacing: 0;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
@@ -51,8 +40,42 @@ button {
 }
 
 .font-display {
-  font-family: var(--font-display);
-  letter-spacing: -0.01em;
+  font-family: var(--font-heading);
+  letter-spacing: 0;
+}
+
+.font-mono,
+.font-jetbrains {
+  font-family: var(--font-code);
+}
+
+.type-label {
+  font-family: var(--font-code);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.type-button {
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+.type-card-title {
+  font-family: var(--font-heading);
+  font-weight: 650;
+  letter-spacing: 0;
+  line-height: 1.12;
+}
+
+.type-body {
+  font-family: var(--font-body);
+  font-weight: 450;
+  line-height: 1.75;
 }
 
 .glass-card {

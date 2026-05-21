@@ -12,7 +12,6 @@ import {
   ArrowRight,
   ArrowUpRight,
   Blocks,
-  Bot,
   BriefcaseBusiness,
   Code2,
   Database,
@@ -34,9 +33,9 @@ import {
 } from "lucide-react";
 
 const techStack = [
-  { name: "Next.js", detail: "App Router, RSC", icon: Blocks, accent: "cyan" },
   { name: "Django", detail: "APIs, admin systems", icon: Server, accent: "emerald" },
   { name: "React", detail: "Component architecture", icon: Layout, accent: "blue" },
+  { name: "Next.js", detail: "App Router, RSC", icon: Blocks, accent: "cyan" },
   { name: "Payload", detail: "Headless CMS, Node.js", icon: Terminal, accent: "white" },
   { name: "WordPress", detail: "CMS customization", icon: Globe, accent: "sky" },
   { name: "PostgreSQL", detail: "Relational data", icon: Database, accent: "amber" },
@@ -89,27 +88,27 @@ const projects = [
 
 const timeline = [
   {
-    title: "Full Stack Developer",
+    title: "Python Django Developer",
     period: "Present",
-    body: "Building production-grade apps with Django and Next.js. Currently focusing on bridging traditional web architectures with AI capabilities.",
+    body: "Building production grade apps with Django and Next.js. Currently focusing on bridging traditional web architectures with AI capabilities.",
     icon: BriefcaseBusiness,
   },
   {
     title: "AI & LLM Integration",
     period: "Focus Area",
-    body: "Actively mastering AI SDKs and prompt engineering. Implementing intelligent features like context-aware chatbots and automated workflows into web platforms.",
+    body: "Actively mastering AI SDKs and prompt engineering. Implementing intelligent features like context aware chatbots and automated workflows into web platforms.",
     icon: Sparkles, 
   },
   {
     title: "Project Delivery",
     period: "Recent Work",
-    body: "Proven track record with Payload CMS, Vue.js, and POS systems. Transitioning from standard CRUD apps to AI-augmented user experiences.",
+    body: "Proven track record with Payload CMS, Vue.js, and POS systems. Transitioning from standard CRUD apps to AI augmented user experiences.",
     icon: Rocket,
   },
   {
     title: "Engineering & Logic",
     period: "Education",
-    body: "Finalizing CS fundamentals with a strong interest in how SME management can be optimized through AI-driven automation.",
+    body: "Finalizing CS fundamentals with a strong interest in how SME management can be optimized through AI driven automation.",
     icon: GraduationCap,
   },
 ];
@@ -207,10 +206,10 @@ function IntroLoader() {
       <div className="cyber-grid absolute inset-0 opacity-25" />
       <div className="relative flex w-[min(82vw,420px)] flex-col gap-5 border border-red-500/20 bg-black/35 p-6 backdrop-blur-xl">
         <div className="flex items-end justify-between gap-8">
-          <span className="font-display text-5xl leading-none text-white sm:text-7xl">
+          <span className="font-display text-5xl font-semibold leading-none text-white sm:text-7xl">
             {String(progress).padStart(3, "0")}
           </span>
-          <span className="pb-2 font-mono text-xs uppercase tracking-[0.36em] text-red-200/70">
+          <span className="type-label pb-2 text-red-200/70">
             Assembling interface
           </span>
         </div>
@@ -250,9 +249,9 @@ function ChapterRail() {
           <li key={item}>
             <a
               href={`#${item === "Hero" ? "hero" : item.toLowerCase()}`}
-              className="group flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.28em] text-zinc-600 transition hover:text-red-200"
+              className="type-label group flex items-center gap-3 text-zinc-600 transition hover:text-red-200"
             >
-              <span className="font-display text-lg leading-none text-red-400/70 transition group-hover:text-red-300">
+              <span className="font-mono text-sm leading-none text-red-400/70 transition group-hover:text-red-300">
                 {index.toString().padStart(2, "0")}
               </span>
               <span className="max-w-0 overflow-hidden transition-all duration-300 group-hover:max-w-28">
@@ -274,15 +273,15 @@ function Header() {
       transition={{ duration: 0.7, ease: "easeOut" }}
       className="sticky top-4 z-30 flex items-center justify-between border border-white/10 bg-white/[0.035] px-4 py-3 shadow-2xl shadow-black/30 backdrop-blur-xl sm:px-5"
     >
-      <a href="#hero" className="font-mono text-sm uppercase text-zinc-100">
+      <a href="#hero" className="font-display text-base font-semibold text-zinc-100">
         Azhar.dev
       </a>
-      <nav className="hidden items-center gap-7 text-sm text-zinc-400 md:flex">
+      <nav className="hidden items-center gap-7 text-sm font-medium text-zinc-400 md:flex">
         {["Stack", "Work", "Experience", "Contact"].map((item) => (
           <a
             key={item}
             href={`#${item.toLowerCase()}`}
-            className="transition-colors hover:text-cyan-200"
+            className="transition-colors hover:text-red-200"
           >
             {item}
           </a>
@@ -290,7 +289,7 @@ function Header() {
       </nav>
       <a
         href="mailto:muhammadazharali17@gmail.com"
-        className="inline-flex h-10 items-center gap-2 bg-cyan-300 px-4 text-sm font-semibold text-black shadow-[0_0_32px_rgba(103,232,249,0.25)] transition hover:bg-cyan-200"
+        className="type-button inline-flex h-10 items-center gap-2 bg-red-400 px-4 text-sm text-black  transition hover:bg-red-300"
       >
         <Mail size={16} />
         Contact
@@ -311,7 +310,7 @@ function Hero() {
     >
       <TopographicLines />
       <div className="pointer-events-none absolute inset-x-[-20vw] top-[28%] z-0 hidden rotate-[-12deg] overflow-hidden border-y border-red-500/15 bg-red-500/[0.035] py-3 md:block">
-        <div className="marquee-track font-display text-4xl uppercase text-red-200/20">
+        <div className="marquee-track font-display text-4xl font-semibold text-red-200/20">
           <span>Build with intent · Motion with restraint · Systems with soul ·</span>
           <span>Build with intent · Motion with restraint · Systems with soul ·</span>
         </div>
@@ -326,22 +325,22 @@ function Hero() {
           initial={{ clipPath: "inset(0 100% 0 0)" }}
           animate={{ clipPath: "inset(0 0% 0 0)" }}
           transition={{ duration: 0.75, ease: "easeOut", delay: 0.2 }}
-          className="mb-7 inline-flex items-center gap-2 border border-red-400/20 bg-red-400/[0.06] px-3 py-2 font-mono text-xs uppercase tracking-[0.22em] text-red-100 shadow-[0_0_42px_rgba(248,113,113,0.12)]"
+          className="type-label mb-7 inline-flex items-center gap-2 border border-red-400/20 bg-red-400/[0.06] px-3 py-2 text-red-100 shadow-[0_0_42px_rgba(248,113,113,0.12)]"
         >
           <span className="h-2 w-2 bg-red-300 shadow-[0_0_18px_rgba(252,165,165,0.85)]" />
           Available for futuristic web builds
         </motion.div>
-        <RevealText className="font-display max-w-5xl text-4xl font-bold uppercase leading-[0.9] text-white sm:text-7xl lg:text-6xl">
+        <RevealText className="font-display mt-4 max-w-6xl text-5xl font-semibold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-[70px]">
           Azhar builds sleek digital systems for the next interface era.
         </RevealText>
-        <p className="mt-7 max-w-2xl text-base leading-8 text-zinc-400 sm:text-lg">
-          Full stack developer crafting fast, intelligent, and visually precise
+        <p className="type-body mt-7 max-w-2xl text-base text-zinc-400 sm:text-lg">
+          Python Django developer crafting fast, intelligent, and visually precise
           products with Next.js, Django, Tailwind, PostgreSQL, and AI workflows.
         </p>
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
           <a
             href="#work"
-            className="group inline-flex h-12 items-center justify-center gap-2 bg-red-400 px-5 font-semibold text-black shadow-[0_0_46px_rgba(248,113,113,0.32)] transition hover:-translate-y-0.5 hover:bg-red-300"
+            className="type-button group inline-flex h-12 items-center justify-center gap-2 bg-red-400 px-5 text-black shadow-[0_0_46px_rgba(248,113,113,0.32)] transition hover:-translate-y-0.5 hover:bg-red-300"
           >
             Explore Work
             <ArrowRight
@@ -353,7 +352,7 @@ function Hero() {
             href="https://github.com/AzharRafi17"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-12 items-center justify-center gap-2 border border-white/12 bg-white/[0.035] px-5 font-semibold text-zinc-100 backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/[0.07]"
+            className="type-button inline-flex h-12 items-center justify-center gap-2 border border-white/12 bg-white/[0.035] px-5 text-zinc-100 backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/[0.07]"
           >
             <ExternalLink size={18} />
             View GitHub
@@ -432,8 +431,8 @@ function FloatingMetric({
       transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       className={`absolute border border-white/12 bg-white/[0.06] px-4 py-3 shadow-2xl shadow-black/40 backdrop-blur-xl ${className}`}
     >
-      <p className="font-mono text-[11px] uppercase text-zinc-500">{label}</p>
-      <p className="mt-1 text-lg font-bold text-white">{value}</p>
+      <p className="type-label text-zinc-500">{label}</p>
+      <p className="mt-1 font-display text-lg font-semibold text-white">{value}</p>
     </motion.div>
   );
 }
@@ -454,8 +453,8 @@ function TechStack() {
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-white">{tech.name}</h3>
-                  <p className="mt-2 text-sm leading-6 text-zinc-400">{tech.detail}</p>
+                  <h3 className="type-card-title text-xl text-white">{tech.name}</h3>
+                  <p className="type-body mt-2 text-sm text-zinc-400">{tech.detail}</p>
                 </div>
                 <div className="grid h-11 w-11 place-items-center border border-white/10 bg-white/[0.04] text-red-100 transition group-hover:border-red-200/35 group-hover:text-red-50">
                   <Icon size={21} />
@@ -482,22 +481,22 @@ function Projects() {
             className="glass-card group flex min-h-[330px] flex-col p-6"
           >
             <div className="mb-8 flex items-center justify-between">
-              <span className="font-mono text-xs uppercase tracking-[0.26em] text-red-200/80">
+              <span className="type-label text-red-200/80">
                 0{index + 1}
               </span>
               <ArrowUpRight className="text-zinc-600 transition group-hover:text-red-200" />
             </div>
-            <h3 className="font-display text-4xl font-bold uppercase leading-none text-white">
+            <h3 className="type-card-title text-3xl text-white sm:text-4xl">
               {project.title}
             </h3>
-            <p className="mt-4 flex-1 text-sm leading-7 text-zinc-400">
+            <p className="type-body mt-4 flex-1 text-sm text-zinc-400">
               {project.description}
             </p>
             <div className="mt-7 flex flex-wrap gap-2">
               {project.tech.map((tech) => (
                 <span
                   key={tech}
-                  className="border border-white/10 bg-white/[0.04] px-3 py-1.5 font-jetbrains text-[11px] uppercase text-zinc-300"
+                  className="type-label border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[10px] text-zinc-300"
                 >
                   {tech}
                 </span>
@@ -507,7 +506,7 @@ function Projects() {
               href={project.source}
               target="_blank"
               rel="noreferrer"
-              className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-red-200 transition hover:text-white"
+              className="type-button mt-7 inline-flex items-center gap-2 text-sm text-red-200 transition hover:text-white"
             >
               View Source <ArrowUpRight size={16} />
             </a>
@@ -537,12 +536,12 @@ function Experience() {
               </div>
               <div>
                 <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-center">
-                  <h3 className="text-xl font-semibold text-white">{item.title}</h3>
-                  <span className="font-mono text-xs uppercase text-zinc-500">
+                  <h3 className="type-card-title text-xl text-white">{item.title}</h3>
+                  <span className="type-label text-zinc-500">
                     {item.period}
                   </span>
                 </div>
-                <p className="mt-3 max-w-3xl text-sm leading-7 text-zinc-400">
+                <p className="type-body mt-3 max-w-3xl text-sm text-zinc-400">
                   {item.body}
                 </p>
               </div>
@@ -563,8 +562,8 @@ function Contact() {
     >
       <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
         <div>
-          <p className="font-mono text-xs uppercase tracking-[0.28em] text-red-200">Contact</p>
-          <h2 className="font-display mt-4 max-w-2xl text-5xl font-bold uppercase leading-none text-white sm:text-6xl">
+          <p className="type-label text-red-200">Contact</p>
+          <h2 className="font-display mt-4 max-w-2xl text-3xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl">
             Let&apos;s build something sharp, fast, and useful.
           </h2>
         </div>
@@ -575,7 +574,7 @@ function Contact() {
               <a
                 key={social.label}
                 href={social.href}
-                className="inline-flex h-11 items-center gap-2 border border-white/10 bg-white/[0.04] px-4 text-sm font-semibold text-zinc-200 transition hover:-translate-y-0.5 hover:border-red-200/40 hover:text-red-100"
+                className="type-button inline-flex h-11 items-center gap-2 border border-white/10 bg-white/[0.04] px-4 text-sm text-zinc-200 transition hover:-translate-y-0.5 hover:border-red-200/40 hover:text-red-100"
               >
                 <Icon size={17} />
                 {social.label}
@@ -653,10 +652,10 @@ function FloatingChatbot() {
       >
         <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
           <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-red-200">
+            <p className="type-label text-[10px] text-red-200">
               Azhar AI
             </p>
-            <p className="mt-1 text-sm text-zinc-400">Context-aware portfolio chat</p>
+            <p className="type-body mt-1 text-sm text-zinc-400">Context-aware portfolio chat</p>
           </div>
           <button
             type="button"
@@ -671,7 +670,7 @@ function FloatingChatbot() {
           {messages.map((message, index) => (
             <div
               key={`${message.role}-${index}`}
-              className={`max-w-[86%] border px-3 py-2 text-sm leading-6 ${
+              className={`type-body max-w-[86%] border px-3 py-2 text-sm ${
                 message.role === "user"
                   ? "ml-auto border-red-300/20 bg-red-300/10 text-red-50"
                   : "border-white/10 bg-white/[0.045] text-zinc-300"
@@ -680,16 +679,16 @@ function FloatingChatbot() {
               {message.role === "assistant" && message.content.includes("[Azhar's Resume]") ? (
                 <div className="flex flex-col gap-3">
                   <span className="text-zinc-300">
-                    Yes, you can view Azhar's resume. Click the link below:
+                    Yes, you can view Azhar&apos;s resume. Click the link below:
                   </span>
                   <a
                     href="/Azhar's%20Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 w-fit border border-red-400/40 bg-red-400/10 px-3 py-1.5 text-xs font-bold text-red-100 transition hover:bg-red-400 hover:text-black"
+                    className="type-button inline-flex w-fit items-center gap-2 border border-red-400/40 bg-red-400/10 px-3 py-1.5 text-xs text-red-100 transition hover:bg-red-400 hover:text-black"
                   >
                     <BriefcaseBusiness size={14} />
-                    AZHAR'S RESUME 
+                    AZHAR&apos;S RESUME
                   </a>
                 </div>
               ) : (
@@ -698,7 +697,7 @@ function FloatingChatbot() {
           </div>
           ))}
           {loading ? (
-            <div className="flex items-center gap-2 text-sm text-zinc-500">
+            <div className="type-body flex items-center gap-2 text-sm text-zinc-500">
               <Loader2 className="h-4 w-4 animate-spin" />
               Thinking from Azhar&apos;s context
             </div>
@@ -709,7 +708,7 @@ function FloatingChatbot() {
             value={input}
             onChange={(event) => setInput(event.target.value)}
             placeholder="Ask about Azhar..."
-            className="min-w-0 flex-1 border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-red-300/50"
+            className="min-w-0 flex-1 border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-medium text-white outline-none transition placeholder:text-zinc-600 focus:border-red-300/50"
           />
           <button
             type="submit"
@@ -750,8 +749,8 @@ function Section({
   return (
     <section id={id} className="py-16 sm:py-20">
       <motion.div {...fadeUp} className="mb-10 max-w-3xl">
-        <p className="font-mono text-xs uppercase tracking-[0.28em] text-red-200">{eyebrow}</p>
-        <RevealText className="font-display mt-4 block text-5xl font-bold uppercase leading-none text-white sm:text-7xl">
+        <p className="type-label text-red-200">{eyebrow}</p>
+        <RevealText className="font-display mt-4 block text-4xl font-semibold leading-[1.04] text-white sm:text-6xl">
           {title}
         </RevealText>
       </motion.div>
@@ -768,7 +767,7 @@ function RevealText({
   className: string;
 }) {
   return (
-    <motion.span
+    <motion.h1
       className={className}
       initial="hidden"
       whileInView="visible"
@@ -779,7 +778,10 @@ function RevealText({
       }}
     >
       {children.split(" ").map((word, index) => (
-        <span key={`${word}-${index}`} className="inline-block overflow-hidden pb-2 pr-3">
+        <span
+          key={`${word}-${index}`}
+          className="inline-block overflow-hidden pb-2 pr-3"
+        >
           <motion.span
             className="inline-block"
             variants={{
@@ -788,7 +790,10 @@ function RevealText({
                 y: "0%",
                 rotate: 0,
                 opacity: 1,
-                transition: { duration: 0.78, ease: [0.16, 1, 0.3, 1] },
+                transition: {
+                  duration: 0.78,
+                  ease: [0.16, 1, 0.3, 1],
+                },
               },
             }}
           >
@@ -796,7 +801,7 @@ function RevealText({
           </motion.span>
         </span>
       ))}
-    </motion.span>
+    </motion.h1>
   );
 }
 
@@ -804,7 +809,7 @@ function KineticRibbon({ reverse = false }: { reverse?: boolean }) {
   return (
     <div className="relative my-8 overflow-hidden border-y border-white/10 py-4">
       <div
-        className={`marquee-track font-display text-4xl uppercase text-white/12 sm:text-6xl ${
+        className={`marquee-track font-display text-4xl font-semibold text-white/12 sm:text-6xl ${
           reverse ? "marquee-reverse" : ""
         }`}
       >
